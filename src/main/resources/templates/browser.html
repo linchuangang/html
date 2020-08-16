@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p id="detail"></p>
+
+<script>
+    var w = window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+
+    var h = window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+
+    var windh=screen.width;
+
+    var height=screen.height;
+
+    var x = document.getElementById("demo");
+    x.innerHTML ="屏幕高度"+height+"屏幕宽度"+windh+",浏览器内窗宽度：" + w + "，高度：" + h + "。";
+
+    document.getElementById("detail").innerText=window.location.href+":"+window.location.hostname+":"+window.location.port;
+
+    function newDoc() {
+        window.location.assign("https://www.baidu.com/")
+    }
+</script>
+
+<input type="button" value="跳转新页面" onclick="newDoc()">
+
+
+</body>
+</html>

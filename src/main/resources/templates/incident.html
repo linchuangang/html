@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 onclick="changeText(this)">请点击此文本！</h1>
+
+<script>
+    function changeText(id) {
+        id.innerHTML = "谢谢！";
+    }
+
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+
+    function mOver(obj) {
+        obj.innerHTML = "谢谢您"
+    }
+
+    function mOut(obj) {
+        obj.innerHTML = "请把鼠标移上来"
+    }
+</script>
+
+请输入您的名字：<input type="text" id="fname" onchange="myFunction()">
+
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)"
+     style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+    请把鼠标移上来</div>
+
+</body>
+</html>

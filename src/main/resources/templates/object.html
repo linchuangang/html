@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript 对象创建</h1>
+
+<p id="demo"></p>
+
+<script>
+    // 创建对象：
+    var person = {firstName:"Bill", lastName:"Gates", age:62, eyeColor:"blue",
+        fullName : function() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    // 显示对象中的数据：
+    document.getElementById("demo").innerHTML =
+        person.firstName + " 已经 " + person["age"] + " 岁了。"+person.fullName();//objectName.propertyName or objectName["propertyName"]
+
+    // var cars = ["Saab", "Volvo", "BMW"];
+    // document.getElementById("demo").innerHTML = cars;
+
+</script>
+
+</body>
+</html>
