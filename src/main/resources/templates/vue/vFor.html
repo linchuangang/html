@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="item in items">
+            {{name}}{{item.text}}
+        </li>
+    </ul>
+
+    <p>{{name | uppercase}}</p>
+
+</div>
+
+<div id="if">
+    <div v-if="Math.random() > 0.5">
+        随机数大于 0.5
+    </div>
+    <div v-else>
+        随机数不大于 0.5
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: "pony",
+            items: [
+                {text: "lingo"},
+                {text: "bob"},
+                {text: "tony"}
+            ]
+        }
+    })
+
+    new Vue({
+        el:'#if'
+    })
+</script>
+
+</body>
+</html>

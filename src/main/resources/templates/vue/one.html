@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>one</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="vue_det">
+    <h1>site : {{site}}</h1>
+    <h1>url : {{url}}</h1>
+    <h1>{{details()}}</h1>
+    <h1 v-html="alexa"></h1>
+    <P v-if="seen">看见没</P>
+    <template v-if="ok">
+        <p>学的不仅是技术，更是梦想！</p>
+        <p>哈哈哈，打字辛苦啊！！！</p>
+    </template>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#vue_det',
+        data: {
+            site: "菜鸟教程",
+            url: "www.runoob.com",
+            alexa: "10000",
+            seen: true,
+            ok: true
+        },
+        methods: {
+            details: function () {
+                return this.site + " - 学的不仅是技术，更是梦想！";
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
+<!--v-if,v-html-->
