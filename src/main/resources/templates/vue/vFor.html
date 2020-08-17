@@ -13,19 +13,30 @@
             {{name}}{{item.text}}
         </li>
     </ul>
-
-    <p>{{name | uppercase}}</p>
-
 </div>
 
-<div id="if">
-    <div v-if="Math.random() > 0.5">
-        随机数大于 0.5
-    </div>
-    <div v-else>
-        随机数不大于 0.5
-    </div>
+<div id="app2">
+    <ul>
+        <li v-for="value in object">
+            {{value}}
+        </li>
+    </ul>
+    <p>------------------------------</p>
+    <ul>
+        <li v-for="(value,key) in object">
+            {{key}}:{{value}}
+        </li>
+    </ul>
 </div>
+
+<div id="app3">
+    <ul>
+        <li v-for="n in 10">
+            {{n}}
+        </li>
+    </ul>
+</div>
+
 
 <script>
     new Vue({
@@ -41,9 +52,25 @@
     })
 
     new Vue({
-        el:'#if'
+        el:'#app2',
+        data:{
+            object: {
+                name: '菜鸟教程',
+                url: 'http://www.runoob.com',
+                slogan: '学的不仅是技术，更是梦想！'
+            }
+        }
+    })
+
+    new Vue({
+        el:'#app3',
+        data:{
+
+        }
     })
 </script>
 
 </body>
 </html>
+
+<!--v-for-->

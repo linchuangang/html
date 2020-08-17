@@ -10,12 +10,19 @@
     <h1>site : {{site}}</h1>
     <h1>url : {{url}}</h1>
     <h1>{{details()}}</h1>
+
     <h1 v-html="alexa"></h1>
-    <P v-if="seen">看见没</P>
+
+    <P v-if="number===1">看见没</P>
+    <p v-else-if="number===2">没了</p>
+    <p v-else>333</p>
+
     <template v-if="ok">
         <p>学的不仅是技术，更是梦想！</p>
         <p>哈哈哈，打字辛苦啊！！！</p>
     </template>
+
+    <p v-show="ok">来了</p>
 </div>
 <script type="text/javascript">
     var vm = new Vue({
@@ -24,7 +31,7 @@
             site: "菜鸟教程",
             url: "www.runoob.com",
             alexa: "10000",
-            seen: true,
+            number: 2,
             ok: true
         },
         methods: {
@@ -37,4 +44,4 @@
 </body>
 </html>
 
-<!--v-if,v-html-->
+<!--v-if-else,v-html，v-show>
