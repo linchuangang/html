@@ -1,5 +1,6 @@
 package com.lin.htmldemo.controller;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Controller
@@ -89,8 +92,13 @@ public class HelloController {
 
     @RequestMapping(value ="/getInfo",method ={RequestMethod.GET,RequestMethod.POST})
     @ResponseBody
-    public String getInfo(String name) {
-       return name+"---AJAX";
+    public String getInfo(HttpServletRequest request,String name) {
+        System.out.println(request.getQueryString());
+        Map<String,Object> result=new HashMap<>();
+        result.put("name",name);
+        result.put("age",21);
+        result.put("address","china");
+       return JSON.toJSONString(result);
     }
 
 }
